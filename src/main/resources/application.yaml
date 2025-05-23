@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: urlshortener
+  flyway:
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_CONNECTION_STRING:jdbc:postgresql://localhost:5432/urlshortener}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
