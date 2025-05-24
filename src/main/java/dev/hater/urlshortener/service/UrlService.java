@@ -13,10 +13,7 @@ public class UrlService {
 
     private final UrlRepository urlRepository;
 
-    public Url create(CreateShortUrlRequest request){
-        Url url = new Url();
-        url.setUrl(request.getUrl());
-
+    public Url create(Url url){
         return urlRepository.save(url);
     }
 
