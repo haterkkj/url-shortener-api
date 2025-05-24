@@ -1,7 +1,6 @@
 package dev.hater.urlshortener.service;
 
 import dev.hater.urlshortener.domain.Url;
-import dev.hater.urlshortener.dto.CreateShortUrlRequest;
 import dev.hater.urlshortener.repository.UrlRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
