@@ -1,5 +1,6 @@
 package dev.hater.urlshortener.controller;
 
+import dev.hater.urlshortener.api.doc.OpenApiUrlController;
 import dev.hater.urlshortener.domain.Url;
 import dev.hater.urlshortener.dto.CreateShortUrlRequest;
 import dev.hater.urlshortener.dto.ShortUrlCreatedResponse;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
-public class UrlController {
+public class UrlController implements OpenApiUrlController {
 
     private final UrlService urlService;
     private final UrlMapper urlMapper;
