@@ -25,8 +25,8 @@ A aplicação permite que você:
 ### 1. Clonar o repositório
 
 ```bash
-git clone <seu-repositorio>
-cd api
+git clone https://github.com/thiago-f-santos/url-shortener-api.git
+cd .\url-shortener-api
 ```
 
 ### 2. Configurar o PostgreSQL
