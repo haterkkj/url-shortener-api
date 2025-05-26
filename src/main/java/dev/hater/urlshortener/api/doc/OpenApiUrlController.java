@@ -20,7 +20,7 @@ public interface OpenApiUrlController {
 
     @Operation(summary = "Retrieve the original URL by its ID")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "302", description = "Redirects to the original URL"),
+            @ApiResponse(responseCode = "301", description = "Redirects to the original URL"),
             @ApiResponse(responseCode = "404", description = "Shortened URL was not found")
     })
     ResponseEntity<Void> findById(@Parameter(description = "ID of the shortened URL") @PathVariable(name = "id") String id);
