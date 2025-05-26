@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+
 @Controller
 @RequiredArgsConstructor
 public class UrlController implements OpenApiUrlController {
@@ -23,7 +25,7 @@ public class UrlController implements OpenApiUrlController {
     @GetMapping("/{id}")
     public ResponseEntity<Void> findById(@PathVariable String id) {
         String originalUrl = urlService.findById(id).getUrl();
-        return ResponseEntity.status(HttpStatus.FOUND).header("Location", originalUrl).build();
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).location(URI.create(originalUrl)).build();
     }
 
     @PostMapping
