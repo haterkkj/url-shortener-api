@@ -6,9 +6,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
+import lombok.CustomLog;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+
+import java.time.Instant;
 
 @Entity
 @Table(name = "url")
@@ -24,5 +27,14 @@ public class Url {
     @NonNull
     @Column(name = "url", columnDefinition = "TEXT")
     private String url;
+
+    @Column(name = "use_count", columnDefinition = "INTEGER")
+    private Integer useCount;
+
+    @Column(name = "lifetime", columnDefinition = "INTEGER")
+    private Integer lifetime;
+
+    @Column(name = "created_at", columnDefinition = "DATETIME")
+    private Instant createdAt;
 
 }
