@@ -1,6 +1,7 @@
 package dev.hater.urlshortener.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -19,6 +20,11 @@ public class CreateShortUrlRequest {
     )
     @Schema(description = "Original URL", example = "https://www.example.com/")
     private String url;
+
+    @NotNull(message = "Lifetime cannot be null")
+    @Min(value = 1, message = "Lifetime must be at least one hour")
+    @Schema(description = "Quantity of hours that the link will be valid", example = "2", minimum = "1")
+    private Integer lifetime;
 
 }
 
