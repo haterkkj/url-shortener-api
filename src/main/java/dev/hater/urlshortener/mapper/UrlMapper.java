@@ -10,9 +10,9 @@ import org.mapstruct.factory.Mappers;
 @Mapper(componentModel = "spring")
 public interface UrlMapper {
 
-    UrlMapper INSTANCE = Mappers.getMapper(UrlMapper.class);
-
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "useCount", ignore = true)
     Url createShortUrlRequestToUrl(CreateShortUrlRequest createShortUrlRequest);
 
     ShortUrlCreatedResponse urlToShortUrlCreatedResponse(Url url);
