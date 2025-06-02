@@ -24,17 +24,16 @@ public class Url {
     @Column(name = "id")
     private String id;
 
-    @NonNull
-    @Column(name = "url", columnDefinition = "TEXT")
+    @Column(name = "url", columnDefinition = "TEXT", nullable = false)
     private String url;
 
     @Column(name = "use_count", columnDefinition = "INTEGER")
     private Integer useCount;
 
-    @Column(name = "lifetime", columnDefinition = "INTEGER")
+    @Column(name = "lifetime", columnDefinition = "INTEGER", nullable = false)
     private Integer lifetime;
 
-    @Column(name = "created_at", columnDefinition = "DATETIME")
+    @Column(name = "created_at", columnDefinition = "TIMESTAMPTZ", nullable = false)
     private Instant createdAt;
 
 }
